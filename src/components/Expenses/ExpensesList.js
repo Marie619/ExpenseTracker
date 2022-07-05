@@ -13,10 +13,12 @@ const ExpensesList = (props) => {
     <ul className={styles["expenses-list"]}>
       {props.items.map((expense) => (
         <ExpenseItem
+          id={expense.id}
           key={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
+          deleteExpenseItem={props.deleteExpense}
         />
       ))}
     </ul>
