@@ -1,0 +1,73 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  background: rgba(234, 227, 227, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 30vh;
+  left: 10%;
+  width: 80%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.header {
+  background: #4f005f;
+  padding: 1rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: white;
+}
+
+.content {
+  padding: 1rem;
+  background-color: rgb(119, 90, 234);
+}
+.content p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.actions {
+  padding: 1rem;
+  background-color: rgb(119, 90, 234);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.actions button {
+  padding: 1rem;
+  color: black;
+  gap: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  margin: 0 10px;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 12px;
+}
+.actions .pos {
+  background-color: rgb(10, 132, 10);
+  color: white;
+}
+.actions .neg {
+  background-color: rgb(220, 8, 8);
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
