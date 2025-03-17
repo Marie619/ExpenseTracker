@@ -24,7 +24,7 @@ const Expenses = (props) => {
       />
 
       <ExpenseChart expenses = {filteredExpenses} />      
-      <ExpensesList expenseList = {filteredExpenses} />
+      <ExpensesList expenseList = {filteredExpenses} onDelete= {props.onDeleteItem} />
     </Card>
   );
 };

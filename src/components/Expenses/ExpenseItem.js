@@ -1,22 +1,15 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
-
-
 const ExpenseItem = (props) => {
-  const [deleteExpense,setDeleteExpense]= useState([props.expense]);
-
   console.log(props.expense);
 
-  const deleteExpenseHandler = (event) =>{
-    const updatedExpense = deleteExpense.filter(item => item !==event.target.value);
-    setDeleteExpense(updatedExpense);
-    
-  }
-
+  const deleteExpenseHandler = () => {
+    props.onDelete(props.id);
+  };
 
   return (
     <li>
@@ -25,7 +18,24 @@ const ExpenseItem = (props) => {
         <div className="expense-item__description">
           <h2 className="expense-item__description h2">{props.title}</h2>
           <div className="expense-item__price">${props.amount}</div>
-          <div className="expense-item__delete" onClick={deleteExpenseHandler}>Delete</div>
+
+          <button className="delete-button" onClick={deleteExpenseHandler}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              <line x1="10" y1="11" x2="10" y2="17"></line>
+              <line x1="14" y1="11" x2="14" y2="17"></line>
+            </svg>
+            Delete
+          </button>
         </div>
       </Card>
     </li>

@@ -38,11 +38,18 @@ const App = () => {
     })
   }
 
+  const deleteExpenseHandler = expenseid => {
+    setExpenses(prevState =>{
+      const updatedExpense = prevState.filter(expense => expense.id !==expenseid)
+      return updatedExpense;
+    })
+  }
+
   return (
     <div className="App-header">
       
       <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expenses expenses= {expenses} />
+      <Expenses expenses= {expenses} onDeleteItem = {deleteExpenseHandler} />
     </div>
   );
 }
