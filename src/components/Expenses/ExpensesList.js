@@ -1,6 +1,6 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
-import "./ExpensesList.css";
+import styles from "./ExpensesList.module.css";
 
 const ExpensesList = (props) => {
   if (props.expenseList.length === 0) {
@@ -8,7 +8,7 @@ const ExpensesList = (props) => {
   }
 
   return (
-    <ul className="expenses-list">
+    <ul className={styles["expenses-list"]}>
       {props.expenseList.map((expense) => (
         <ExpenseItem
           key={expense.id}

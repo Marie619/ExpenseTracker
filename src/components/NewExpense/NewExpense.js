@@ -1,5 +1,5 @@
 import React from "react";
-import "./NewExpense.css";
+import styles from "./NewExpense.module.css";
 import ExpenseForm from "./ExpenseForm";
 const NewExpense = (props) => {
 
@@ -13,7 +13,7 @@ const NewExpense = (props) => {
     }
 
   return (
-    <div className="new-expense">
+    <div className={styles["new-expense"]}>
       <ExpenseForm  onSaveData = {saveExpenseDataHandler}/>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import "./App.css";
+import styles from  "./App.module.css";
 import "./components/Expenses/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -46,7 +46,7 @@ const App = () => {
   }
 
   return (
-    <div className="App-header">
+    <div className={styles["App-header"]}>
       
       <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses= {expenses} onDeleteItem = {deleteExpenseHandler} />

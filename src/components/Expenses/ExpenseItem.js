@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React  from "react";
 
-import "./ExpenseItem.css";
+import styles from "./ExpenseItem.module.css";
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 
@@ -13,13 +13,13 @@ const ExpenseItem = (props) => {
 
   return (
     <li>
-      <Card className="expense-item">
+      <Card className={styles["expense-item"]}>
         <ExpenseDate date={props.date} />
-        <div className="expense-item__description">
-          <h2 className="expense-item__description h2">{props.title}</h2>
-          <div className="expense-item__price">${props.amount}</div>
+        <div className={styles["expense-item__description"]}>
+          <h2 className={styles["expense-item__description h2"]}>{props.title}</h2>
+          <div className={styles["expense-item__price"]}>${props.amount}</div>
 
-          <button className="delete-button" onClick={deleteExpenseHandler}>
+          <button className={styles["delete-button"]} onClick={deleteExpenseHandler}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
